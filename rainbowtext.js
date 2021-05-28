@@ -6,7 +6,7 @@
     repeat: true,
     numberAches: {
       topWeeoo: function(tI, k){
-        return Math.sin((tI/3 + k) / 2) * 5 + 'px';
+        return Math.sin((tI/3 + k) / 4) * 3 + 'px';
       }
     }
   };
@@ -57,6 +57,9 @@
         delay = settings.delay,
         nanana = settings.numberAches,
         tI = _self.totalIterations = 0;
+
+      //_self.updater && window.clearTimeout(_self.updater);
+      //_self.updater = window.setTimeout(animateText.bind(_self, spans), delay);
       requestAnimationFrame(animateText.bind(_self, spans, tI));
 
       function animateText(spans, tI) {
@@ -66,6 +69,7 @@
         });
 
         if (settings.repeat) requestAnimationFrame(animateText.bind(_self, spans, ++tI));
+        //if (settings.repeat) _self.updater = window.setTimeout(animateText.bind(_self, spans), delay);
       };
 
       return _self;
