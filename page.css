@@ -82,14 +82,6 @@ h1, #desc {
   line-height: 2em;
 }
 
-#discord-tag:after {
-  content: "apple#9999"
-}
-
-#discord-tag:hover:after{
-  content:"290983149507182592";
-}
-
 h2 {
   font-size: 40px;
   margin: 0;
