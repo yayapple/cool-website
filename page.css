@@ -97,7 +97,7 @@ h1, #desc {
   height: 256px;
 }
 
-#footer {
+#bubble {
   background-color: black;
   border: 2px solid white;
   text-align: center;
@@ -110,3 +110,7 @@ h1, #desc {
   padding: 0 10px;
 }
 
+#footer {
+  text-align: center;
+  margin: 24px 0;
+}
