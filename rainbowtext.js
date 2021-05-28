@@ -27,7 +27,7 @@
       [].forEach.call(spans, function(v, k, c) {
         v.style.color = _self.rainbow[k % _self.rainbow.length];
         v.style.position = 'relative';
-        v.style.textShadow = '3px 2px 0 black';
+        v.style.textShadow = '3px 2px 0 white';
       });
 
       return spans;

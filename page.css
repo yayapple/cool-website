@@ -195,6 +195,7 @@ h2 {
   background-color: black;
   border: 2px solid white;
   text-align: center;
+  line-height: 1em;
   position: fixed;
   bottom: 10px;
   right: 10px;
