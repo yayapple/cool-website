@@ -1,14 +1,9 @@
 (function() {
   var settings = {
-    rainbowLength: 256,
-    rainbowMultiplier: 2,
+    rainbowLength: 512,
     rainbowClass: 'rainbow-text',
-    repeat: true,
-    numberAches: {
-      topWeeoo: function(tI, k){
-        return Math.sin((tI/3 + k) / 2) * 5 + 'px';
-      }
-    }
+    delay: 50,
+    repeat: true
   };
 
   var Δ = {
@@ -19,6 +14,7 @@
       this.element = this.dissectText(sourceElement);
       sourceElement.parentNode.insertBefore(this.element, sourceElement);
       sourceElement.remove();
+
       this.update(this.draw(this.element));
 
       return this;
@@ -28,9 +24,10 @@
       var _self = this;
 
       var spans = el.querySelectorAll('span');
-      [].forEach.call(spans, function(v, k) {
+      [].forEach.call(spans, function(v, k, c) {
         v.style.color = _self.rainbow[k % _self.rainbow.length];
         v.style.position = 'relative';
+        v.style.textShadow = '3px 2px 0 black';
       });
 
       return spans;
@@ -55,36 +52,36 @@
       if (!spans) return;
       var _self = this,
         delay = settings.delay,
-        nanana = settings.numberAches,
         tI = _self.totalIterations = 0;
 
-      //_self.updater && window.clearTimeout(_self.updater);
-      //_self.updater = window.setTimeout(animateText.bind(_self, spans), delay);
-      requestAnimationFrame(animateText.bind(_self, spans, tI));
+      _self.updater && window.clearTimeout(_self.updater);
+      _self.updater = window.setTimeout(animateText.bind(_self, spans), delay);
 
-      function animateText(spans, tI) {
+      function animateText(spans) {
+        ++tI;
+
         [].forEach.call(spans, function(v, k) {
           v.style.color = _self.rainbow[(tI + k) % _self.rainbow.length];
-          v.style.top = nanana.topWeeoo(tI, k); //Math.sin((tI + k) / 6) * 20 + 'px';
+          v.style.top = Math.sin((tI/2 + k) / 2) * 10 + 'px';
         });
 
-        if (settings.repeat) requestAnimationFrame(animateText.bind(_self, spans, ++tI));
-        //if (settings.repeat) _self.updater = window.setTimeout(animateText.bind(_self, spans), delay);
+        if (settings.repeat) _self.updater = window.setTimeout(animateText.bind(_self, spans), delay);
       };
 
-      return _self;
-      //return _self.updater;
+      return _self.updater;
     }
   }.init();
 
   function makeMeARainbow(length) {
     var length = length || 64;
-
+    
     return (function generateRainbow(arr, amount) {
-      if (--amount < 0) return arr;
-      arr.push(generateColor(((length - amount+1) % length), length, settings.rainbowMultiplier));
+      if (--amount < 0 ) return arr;
+      arr.push(generateColor( ((length - (amount+1)) % length) , length, 8));
       return generateRainbow(arr, amount);
     })([], length);
+    
+    
 
     function generateColor(amount, total, multiplier) {
       return 'hsla\(' + ((amount * multiplier) * (360 / total)) + ',100%,60%,0.90\)'
