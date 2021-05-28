@@ -1,10 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Recursive:CASL,CRSV,MONO@1,1,0.5&display=swap'); 
 
 html, body {
   height: 100%;
   width: 100%;
   margin: 0;
   background-color: black;
+  font-family: "Recursive";
+  color: white;
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
@@ -15,7 +18,7 @@ html::-webkit-scrollbar {
 
 
 p {
-  color: white;
+  font-size: 24px;
 }
 
 h1 {
@@ -27,7 +30,6 @@ h1, #desc {
   text-align: center;
   width: 100%;
   left: 0;
-  color: white;
 }
 
 #desc {
@@ -36,12 +38,56 @@ h1, #desc {
   position: relative;
 }
 
+.section-title {
+  justify-content: center;
+  display: flex;
+  position: relative;
+  top: -25px;
+}
+
+h2 {
+  font-size: 40px;
+  margin: 0;
+  background-color: black;
+  line-height: 40px;
+  padding: 0 30px;
+  background: linear-gradient(to right, 
+  rgba(0, 0, 0, 0) 0%, 
+  rgb(0, 0, 0) 10%, 
+  rgb(0, 0, 0) 90%, 
+  rgba(0, 0, 0, 0) 100%);
+}
+
+.funny-text {
+  position: absolute;
+  left: 40px;
+  top: 30px;
+}
+
+.funny-text p {
+	animation: move 1s alternate infinite ease-in-out;
+  font-size: 16px;
+  font-family: "VT323";
+}
+
+@keyframes move {
+	0% {
+		transform: scale(1) rotate(-12deg);
+	}
+	100% {
+		transform: scale(1.2) rotate(-12deg);
+	}
+}
+
+
 .rainbow-text {
 
   font-family: "VT323";
   margin: 128px 0 0 0;
   transform: translateY(-50%);
 }
+
+
 
 .flex-container {
   position: relative;
@@ -62,7 +108,6 @@ h1, #desc {
   max-width: 500px;
   min-height: 250px;
   margin: 10px;
-  line-height: 150px;
   color: white;
   font-weight: bold;
   font-size: 3em;
@@ -89,6 +134,9 @@ h1, #desc {
     width: auto;
     max-width: none;
   }
+  p {
+    font-size: larger;
+  }
 
 }
 
@@ -113,4 +161,8 @@ h1, #desc {
 #footer {
   text-align: center;
   margin: 24px 0;
+}
+
+#bubble p {
+  font-size: 16px;
 }
