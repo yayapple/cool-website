@@ -6,7 +6,7 @@
     repeat: true,
     numberAches: {
       topWeeoo: function(tI, k){
-        return Math.sin((tI/3 + k) / 4) * 3 + 'px';
+        return Math.sin((tI/3 + k) / 2) * 5 + 'px';
       }
     }
   };
