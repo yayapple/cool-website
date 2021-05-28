@@ -1,11 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
-body {
+html, body {
   height: 100%;
   width: 100%;
   margin: 0;
   background-color: black;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
+/* chrome, safari, opera, need to test if it works */
+html::-webkit-scrollbar {
+  display: none;
+}
+
 
 p {
   color: white;
