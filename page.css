@@ -6,6 +6,8 @@ html, body {
   width: 100%;
   margin: 0;
   background-color: black;
+  background-image: url("http://i.ytimg.com/vi/T40NSkd7Olc/maxresdefault.jpg");
+  background-repeat: repeat;
   font-family: "Recursive";
   color: white;
   -ms-overflow-style: none;  /* IE and Edge */
@@ -141,6 +143,7 @@ h2 {
 
 .flex-item {
   border: 8px dotted;
+  background: black;
   width: 300px;
   max-width: 500px;
   min-height: 250px;
