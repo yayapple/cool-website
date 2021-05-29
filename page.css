@@ -8,7 +8,7 @@ html, body {
   background-color: black;
   background-image: url("media/starz.jpg");
   background-repeat: repeat;
-  font-family: "Recursive";
+  font-family: "Recursive", monospace;
   color: white;
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
@@ -18,22 +18,18 @@ html::-webkit-scrollbar {
   display: none;
 }
 
-
 p, li {
   font-size: 24px;
 }
 
-a:link {
+a:link, a:visited {
   text-decoration: none;
   color: white;
 }
-a:visited {
-  text-decoration: none;
-  color: white;
-}
-a:hover {
+
+/* a:hover {
   text-decoration: underline 2px white;
-}
+} */
 
 h1 {
   top: 128px;
@@ -97,12 +93,49 @@ h2 {
   rgba(0, 0, 0, 0) 100%);
 }
 
+#feature-image {
+  position: relative;
+}
+
+#feature-image img {
+  width: 180px;
+  height: 180px;
+  z-index: 1;
+}
+
+#feature-hover-text {
+  background-color: white;
+  z-index: 2;
+  width: 180px;
+  height: 180px;
+  opacity: 0;
+  transition: 0.3s cubic-bezier(.08,.82,.17,1);
+  color: black;
+  display: flex;
+  justify-content: center;
+}
+
+#feature-hover-text:hover {
+  opacity: 0.6;
+}
+
+#feature-image > * {
+  position: absolute;
+  top: 24px;
+  left: 32px;
+}
+
+#caption {
+  position: absolute;
+  left: 200px;
+}
+
 .funny-text {
   position: absolute;
   left: 40px;
   top: 30px;
 }
-
+/* i probably need to add compatability for other browsers */
 .funny-text p {
 	animation: move 1s alternate infinite ease-in-out;
   font-size: 24px;
@@ -120,13 +153,10 @@ h2 {
 
 
 .rainbow-text {
-
   font-family: "VT323";
   margin: 128px 0 0 0;
   transform: translateY(-50%);
 }
-
-
 
 .flex-container {
   position: relative;
@@ -134,11 +164,11 @@ h2 {
   flex-flow: row wrap;
   justify-content: space-evenly;
   top: 64px;
-  left: 10%;
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
   list-style: none;
   width: 80%;
+  max-width: 1800px;
 }
 
 .flex-item {
@@ -161,7 +191,11 @@ h2 {
   max-width: 300px;
 }
 
-@media all and (max-width: 800px) {
+#flex-3 {
+  min-width: 350px;
+}
+
+@media all and (max-width: 840px) {
   .flex-container {
     flex-direction: column;
   }
@@ -212,4 +246,8 @@ h2 {
 
 #bubble p {
   font-size: 16px;
+}
+
+#source-link {
+  text-decoration: underline 2px white;
 }
