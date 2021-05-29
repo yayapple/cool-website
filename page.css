@@ -151,7 +151,6 @@ h2 {
 	}
 }
 
-
 .rainbow-text {
   font-family: "VT323";
   margin: 128px 0 0 0;
@@ -206,7 +205,7 @@ h2 {
 }
 
 @media only screen and (hover: none) and (pointer: coarse){
-
+/* touchscreen detection */
   .flex-container {
     flex-direction: column;
   }
