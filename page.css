@@ -104,7 +104,7 @@ h2 {
 }
 
 #feature-hover-text {
-  /* background-color: white; */
+  /* background-color: white; */ /* uncomment for text */
   z-index: 2;
   width: 180px;
   height: 180px;
@@ -117,7 +117,7 @@ h2 {
 
 #feature-hover-text > img {
   width: 180px;
-  height: 162px;
+  height: 162px; 
   transform: translateY(18px);
 }
 
@@ -131,9 +131,13 @@ h2 {
   left: 32px;
 }
 
-#caption {
+#caption , #caption-alt{
   position: absolute;
   left: 200px;
+}
+
+#caption-alt {
+  display: none;
 }
 
 #damedane-section {
@@ -163,7 +167,7 @@ h2 {
 .funny-text p {
 	animation: move 1s alternate infinite ease-in-out;
   font-size: 24px;
-  font-family: "VT323";
+  font-family: "VT323", monospace;
 }
 
 @keyframes move {
@@ -176,7 +180,7 @@ h2 {
 }
 
 .rainbow-text {
-  font-family: "VT323";
+  font-family: "VT323", monospace;
   margin: 128px 0 0 0;
   transform: translateY(-50%);
 }
@@ -196,6 +200,7 @@ h2 {
 
 .flex-item {
   border: 8px dotted;
+  border-radius: 24px;
   background: black;
   width: 300px;
   max-width: 600px;
@@ -240,6 +245,17 @@ h2 {
   p {
     font-size: larger;
   }
+
+  /* change text from cursor to tap */
+
+  #caption > p {
+    display: none;
+  }
+
+  #caption-alt {
+    display: block;
+  }
+  
 
 }
 
