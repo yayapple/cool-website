@@ -104,7 +104,7 @@ h2 {
 }
 
 #feature-hover-text {
-  background-color: white;
+  /* background-color: white; */
   z-index: 2;
   width: 180px;
   height: 180px;
@@ -115,8 +115,14 @@ h2 {
   justify-content: center;
 }
 
+#feature-hover-text > img {
+  width: 180px;
+  height: 162px;
+  transform: translateY(18px);
+}
+
 #feature-hover-text:hover {
-  opacity: 0.6;
+  opacity: 1; /* change this to 0.6 for text */
 }
 
 #feature-image > * {
@@ -128,6 +134,24 @@ h2 {
 #caption {
   position: absolute;
   left: 200px;
+}
+
+#damedane-section {
+  position:relative
+}
+
+#damedane-section > p {
+  position: absolute;
+  left: 200px;
+}
+
+#damedane {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  left: 32px;
+  top: 24px;
+  transform: rotate(-90deg);
 }
 
 .funny-text {
@@ -222,20 +246,14 @@ h2 {
 #after {
   width: 100%;
   height: 256px;
+  display: grid;
+  justify-content: center;
+  align-content: center;
 }
 
-#bubble {
-  background-color: black;
-  border: 2px solid white;
-  text-align: center;
-  line-height: 1em;
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
-  min-width: 50px;
-  height: 50px;
-  border-radius: 25px;
-  padding: 0 10px;
+#go-button {
+  padding: 8px 16px;
+  font-size: 24px;
 }
 
 #footer {
@@ -243,10 +261,60 @@ h2 {
   margin: 24px 0;
 }
 
-#bubble p {
-  font-size: 16px;
-}
-
 #source-link {
   text-decoration: underline 2px white;
+}
+
+button {
+  font-family: "Recursive", monospace;
+  font-size: 16px;
+  background: white;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 8px #999;
+
+  user-select: none;
+}
+
+button:hover {
+  background: #ccc;
+}
+
+button:active {
+  box-shadow: 0 4px #777;
+  background: #ccc;
+  transform: translateY(4px);
+}
+
+
+/* subpage specific */
+
+.header {
+  width: 100%;
+  height: 50px;
+}
+
+#back-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  height:25px;
+}
+
+.content > div {
+  width: 80%;
+  top: 100px;
+  height: 500px;  
+  position: relative;
+}
+
+.content {
+  display: grid;
+  justify-content: center;
+
+}
+
+.noscroll {
+  overflow: hidden;
 }
