@@ -10,7 +10,7 @@ html, body {
   background-repeat: repeat;
   font-family: "Recursive", monospace;
   color: white;
-  -ms-overflow-style: none;  /* IE and Edge */
+  -ms-overflow-style: none;  /* IE and Edge */ 
   scrollbar-width: none;  /* Firefox */
 }
 /* chrome, safari, opera, need to test if it works */
@@ -272,6 +272,14 @@ h2 {
   font-size: 24px;
 }
 
+#knives {
+  margin: auto;
+  width: 400px;
+  height: 38px;
+  background-image: url("media/knife.gif");
+  background-repeat: repeat-x;
+}
+
 #footer {
   text-align: center;
   margin: 24px 0;
@@ -319,10 +327,10 @@ button:active {
 }
 
 .content > div {
-  width: 80%;
-  top: 100px;
-  height: 500px;  
+  top: 100px; 
   position: relative;
+  display: grid;
+  justify-content: center;
 }
 
 .content {
