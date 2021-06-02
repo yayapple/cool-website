@@ -58,6 +58,7 @@ h1, #desc {
 .section-content {
   position: relative;
   top: -30px;
+  height: 0px;
 }
 
 .section-content p, .section-content ul {
