@@ -286,10 +286,6 @@ h2 {
   margin: 24px 0;
 }
 
-#source-link {
-  text-decoration: underline 2px white;
-}
-
 button {
   font-family: "Recursive", monospace;
   font-size: 16px;
