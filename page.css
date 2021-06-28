@@ -141,22 +141,8 @@ h2 {
   display: none;
 }
 
-#damedane-section {
+#message-section {
   position:relative
-}
-
-#damedane-section > p {
-  position: absolute;
-  left: 200px;
-}
-
-#damedane {
-  position: absolute;
-  width: 180px;
-  height: 180px;
-  left: 32px;
-  top: 24px;
-  transform: rotate(-90deg);
 }
 
 .funny-text {
