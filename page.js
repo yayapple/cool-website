@@ -1,10 +1,12 @@
-var date = new Date();
-var day = date.getDay();
+happyDate();
+footerText();
+
 function happyDate() {
+  const date = new Date();
+  const day = date.getDay();
 	const weekdays = new Array("sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday");
   document.getElementById("message-section").firstElementChild.innerHTML = "happy " + weekdays[day];
 }
-happyDate();
 
 function footerText() {
   const messages = new Array(
@@ -47,4 +49,3 @@ function footerText() {
   );
   document.getElementById("footer").children[1].innerHTML = messages[messages.length * Math.random() | 0];
 }
-footerText();
