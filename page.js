@@ -40,8 +40,11 @@ function footerText() {
     "i'm low on cocaine.",
     "you have to do it. you need to.",
     "you're out of eggs.",
-    "go drink some water."
+    "go drink some water.",
+    "gay.",
+    "you need to get that checked out.",
+    "thanks."
   );
-  document.getElementById("footer").firstElementChild.innerHTML = messages[messages.length * Math.random() | 0];
+  document.getElementById("footer").children[1].innerHTML = messages[messages.length * Math.random() | 0];
 }
 footerText();
