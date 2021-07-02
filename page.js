@@ -1,5 +1,6 @@
 happyDate();
 footerText();
+clicked(document.getElementById("clickbutton"));
 
 function happyDate() {
   const date = new Date();
@@ -49,3 +50,14 @@ function footerText() {
   );
   document.getElementById("footer").children[1].innerHTML = messages[messages.length * Math.random() | 0];
 }
+
+function clicked(e) {
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", "https://api.countapi.xyz/hit/amongus-s.us/clicks");
+  xhr.responseType = "json";
+  xhr.onload = function() {
+    e.innerHTML = this.response.value;
+  }
+  xhr.send();
+}
+
