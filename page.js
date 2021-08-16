@@ -56,7 +56,16 @@ function footerText() {
     "go drink some water.",
     "gay.",
     "you need to get that checked out.",
-    "thanks."
+    "thanks.",
+    "twitter? i hardly know 'er!",
+    "my keyboard layout looks like this: qwfpbjluy;[]\ arstgkneio' xcdvzmh,./ .",
+    "tell me all of your problems. i won't solve them.",
+    "you need to leave.",
+    "tik tok? more like lick sock.",
+    "lalalalalalalalala",
+    "speak up a little, i can't hear you.",
+    "you.",
+    "sanovumazeqfwpl;yukairestnaidvzgrkinatsvyuk;"
   );
   document.getElementById("footer").children[1].innerHTML = messages[messages.length * Math.random() | 0];
 }
