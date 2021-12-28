@@ -151,7 +151,8 @@ h2 {
 
 .funny-text {
   position: absolute;
-  left: 40px;
+  /* left: 40px; */
+  left: 80px;
   top: 30px;
 }
 /* i probably need to add compatability for other browsers */
