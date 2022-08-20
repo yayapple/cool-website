@@ -2,5 +2,6 @@
 credit:
 https://codepen.io/arianr/pen/NqdyqE
 
-to do: 
-- add support for IE.  LOL just kidding
+my personal website :D
+pure html/css built without a framework for reasons unknown
+works with js disabled (i think)
