@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html class="noscroll">
+  <head>
+    <title>:O another page</title>
+    <link rel="stylesheet" type="text/css" href="page.css">
+    <link rel="shortcut icon" href="media/sus.png">
+  </head>
+  <body>
+    <div class="header">
+      <a href="/" draggable="false">
+        <button id="back-button">&lt;---</button>
+      </a>
+    </div id="flexbox">
+      <ul class="flex-container">
+        <li id="flex-sub" class="flex-item">
+          <div class="section-title">
+            <h2>Quines</h2>
+          </div>
+          <div class="section-content">
+            <p class="article"><br>
+              I enrolled in a java class a few weeks ago, and to supplement my learning of java, 
+              and refresh my knowledge of python, I wrote some quines in both languages. To give myself a challange,
+              I did my best to follow whitespace conventions for both the source code and the output. While it does
+              make the quines much longer, it was fun to problem-solve, as I had not seen that many properly
+              formatted quines and had less knowledge about them.
+              
+
+            </p>
+            <h3>Java</h3>
+<pre><code>public class quine {
+
+    public static void main(String[] args) {
+        String quine = """
+            public class quine {
+            
+                public static void main(String[] args) {
+                    String quine = %s
+                    String triple = String.valueOf((char)34).repeat(3);
+            
+                    System.out.printf(quine, triple.indent(0) + (quine + triple + ';').indent(12));
+                }
+            }
+            """;
+
+        String triple = String.valueOf((char)34).repeat(3);
+
+        System.out.printf(quine, triple.indent(0) + (quine + triple + ';').indent(12));
+    }
+}
+</code></pre>
+            <p class="article">This relies on the text block feature that was introduced in Java 15.
+              The quote characters to be printed are themselves escaped by generating the character
+              from ascii (see <code>String.valueOf((char)34)</code>).
+            </p>
+            <h3>Python</h3>
+<pre><code>#!/usr/bin/env python3
+
+def main():
+    quine = """
+        #!/usr/bin/env python3
+
+        def main():
+            quine = {}
+
+            t = chr(34)*3
+            print(quine.replace(" "*8, "")[1:-5].format(t+quine+t))
+
+        if __name__ == "__main__":
+            main()
+    """
+
+    t = chr(34)*3
+    print(quine.replace(" "*8, "")[1:-5].format(t+quine+t))
+
+if __name__ == "__main__":
+    main()
+</code></pre>
+            <p class="article">
+              This one was a little different, as python interprets whitespace in text blocks a little
+              differently than java.
+            </p>
+            <p class="article">
+              After I had completed those, I had developed a good understanding of how to create basic
+              quines. For a final challenge, I decided to create an Ouroboros quine, which is one that
+              has multiple levels of recursion. I made one that, when the python version is ran, generates
+              the java version of the source, and vice versa.
+            </p>
+            <h3>Java + Python</h3>
+            <p class="article">Python version:</p>
+<pre><code>#!/usr/bin/env python3
+
+def main():
+    pquine = """
+        #!/usr/bin/env python3
+        
+        def main():
+            pquine = %s
+        
+            jquine = %s
+        
+            t = chr(34)*3 # triple quote
+            i = "    " # indent
+            print(jquine.replace(chr(10)+i*2, chr(10))[1:-5] %s (t+jquine+i+t, t+pquine+i+t))
+        
+        if __name__ == "__main__":
+            main()
+    """
+
+    jquine = """
+        public class jquine {
+        
+            public static void main(String[] args) {
+                String jquine = %s;
+                String pquine = %s;
+                String t = String.valueOf((char)34).repeat(3); // triple quote
+        
+                System.out.printf(pquine, t.indent(0) + pquine.indent(8) + "    " + t, t.indent(0) + jquine.indent(8) + "    " + t, String.valueOf((char)37));
+            }
+        }
+    """
+
+    t = chr(34)*3 # triple quote
+    i = "    " # indent
+    print(jquine.replace(chr(10)+i*2, chr(10))[1:-5] % (t+jquine+i+t, t+pquine+i+t))
+
+if __name__ == "__main__":
+    main()
+</code></pre>
+            <p class="article">
+              Which, when ran, prints the java version:
+            </p>
+<pre><code>public class jquine {
+
+  public static void main(String[] args) {
+      String jquine = """
+      public class jquine {
+      
+          public static void main(String[] args) {
+              String jquine = %s;
+              String pquine = %s;
+              String t = String.valueOf((char)34).repeat(3); // triple quote
+      
+              System.out.printf(pquine, t.indent(0) + pquine.indent(8) + "    " + t, t.indent(0) + jquine.indent(8) + "    " + t, String.valueOf((char)37));
+          }
+      }
+      """;
+      String pquine = """
+      #!/usr/bin/env python3
+
+      def main():
+          pquine = %s
+
+          jquine = %s
+
+          t = chr(34)*3 # triple quote
+          i = "    " # indent
+          print(jquine.replace(chr(10)+i*2, chr(10))[1:-5] %s (t+jquine+i+t, t+pquine+i+t))
+
+      if __name__ == "__main__":
+          main()
+      """;
+      String t = String.valueOf((char)34).repeat(3); // triple quote
+
+      System.out.printf(pquine, t.indent(0) + pquine.indent(8) + "    " + t, t.indent(0) + jquine.indent(8) + "    " + t, String.valueOf((char)37));
+  }
+}</code></pre>
+            <p class="article">
+              Which produces the python version, and so on.<br><br>
+              These snippets are not meant to be an example of great code, moreso a fun exhibition
+              of learning languages. As a bonus, here's the first ever program I wrote in java (besides hello world).
+              You play rock paper scissors against the cpu.
+            </p>
+<pre><code>
+import java.util.*;
+
+public class rps {
+    public static void main(String[] args) {
+        Scanner scnr = new Scanner(System.in);
+        System.out.print("Select rock, paper, or scissors: \n> ");
+
+        String userChoice = scnr.nextLine().toLowerCase();
+
+        String[] choices = {"rock", "paper", "scissors"}; // define valid choices 
+        boolean valid = Arrays.asList(choices).contains(userChoice); //check if the user input is in acceptable list
+        if (!valid) { // if not valid then boot them out
+            System.out.println("thats not rock paper or scissor!!");
+            System.exit(0);
+        } 
+
+        String computerChoice = getRandom(choices); // have the computer choose one
+        System.out.println("\nYou selected: " + userChoice);
+        System.out.println("The computer selected: " + computerChoice + "\n");
+
+        checkWinner(userChoice, computerChoice);
+    }
+
+    public static String getRandom(String[] array) {
+        int rand = new Random(System.currentTimeMillis()).nextInt(array.length); // time call sets random seed
+        return array[rand];
+    }
+
+    public static void checkWinner(String userChoice, String computerChoice) {
+        if (userChoice.equals(computerChoice)) { // first check if the choices are equal, indicating a tie
+            System.out.println("you tied!!");
+            System.exit(0);
+        } 
+        boolean won = false;
+        switch (userChoice) { // if not tie, go to user choice and check if won
+            case "rock":
+                if (computerChoice.equals("scissors")) { // there is most definitely a better way to do this
+                    won = true;
+                } 
+                break;
+            case "paper":
+                if (computerChoice.equals("rock")) {
+                    won = true;
+                }
+                break;
+            case "scissors":
+                if (computerChoice.equals("paper")) {
+                    won = true;
+                }
+                break;
+            }
+        if (won == true) {
+            System.out.println("you won!!");
+            System.exit(0);
+        } else {
+            System.out.println("you lost!!");
+            System.exit(0);
+        }
+    }
+}
+</code></pre>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

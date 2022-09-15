@@ -13,6 +13,7 @@ html, body {
   color: white;
   -ms-overflow-style: none;  /* IE and Edge */ 
   scrollbar-width: none;  /* Firefox */
+  overflow: scroll;
 }
 /* chrome, safari, opera, need to test if it works */
 html::-webkit-scrollbar {
@@ -61,7 +62,7 @@ h1, #desc {
   top: -30px;
 }
 
-.section-content p, .section-content ul {
+.section-content p, .section-content ul, .section-content h3 {
   padding: 0 32px;
   margin: 1em 0 0;
 }
@@ -313,9 +314,10 @@ button:active {
 
 #back-button {
   position: absolute;
-  top: 10px;
-  left: 10px;
-  height:25px;
+  font-size:32px;
+  top: 40px;
+  left: 40px;
+  padding: 0 10px;
 }
 
 .content > div {
@@ -331,8 +333,36 @@ button:active {
   margin: 30px 0 50px;
 }
 
+.article {
+  color:#ccc;
+}
+
 .noscroll {
   overflow: hidden;
+}
+
+#flex-sub {
+  width: 1000px;
+  max-width: 2000px;  
+}
+
+pre code {
+  background-color: #222;;
+  display: block;
+  white-space: pre-wrap;
+  font-size: 16px;
+  font-family:'Courier New', Courier, monospace;
+  margin: 40px;
+  width: fit-content;
+  padding: 30px;
+  border-radius: 24px;
+  color:#ccc;
+}
+
+code {
+  background-color: #222;
+  padding: 2px;
+  border-radius: 4px;
 }
 
 /* other */
