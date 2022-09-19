@@ -42,6 +42,7 @@ h1, #desc {
   text-align: center;
   width: 100%;
   left: 0;
+  display: block;
 }
 
 #desc {
@@ -151,10 +152,10 @@ h2 {
 }
 
 .funny-text {
-  position: absolute;
-  /* left: 40px; */
-  left: 80px;
-  top: 30px;
+  position: static;
+  width: fit-content;
+  height: fit-content;
+  transform: translate(100px, 70px)
 }
 /* i probably need to add compatability for other browsers */
 .funny-text p {
@@ -276,10 +277,6 @@ h2 {
 .footer {
   text-align: center;
   margin: 24px 0;
-}
-
-.footer span, #desc {
-  background-color: black;
 }
 
 button {
