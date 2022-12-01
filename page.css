@@ -29,7 +29,7 @@ a:link, a:visited {
   color: white;
 }
 
-a:hover li span, .inline-link:hover {
+a:hover li span, .inline-link:hover, a:hover li {
   text-decoration: underline 2px white;
 }
 
@@ -372,4 +372,9 @@ code {
   background-color: black;
   box-shadow: 0 0 10px 15px black;
   line-height: 1.5em;
+}
+
+#christmas li {
+  margin-left: 48px;
+  list-style-type: disc;
 }
