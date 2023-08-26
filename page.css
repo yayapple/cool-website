@@ -103,53 +103,27 @@ h2 {
 
 #feature-image {
   position: relative;
+  display: flex;
 }
 
 #feature-image img {
-  width: 180px;
-  height: 180px;
+  max-width: 200px;
+  max-height: 200px;
   z-index: 1;
+  padding: 24px 32px 0;
+  justify-items: center;
+  margin: auto;
 }
 
-#feature-hover-text {
-  /* background-color: white; */ /* uncomment for text */
-  z-index: 2;
-  width: 180px;
-  height: 180px;
-  opacity: 0;
-  transition: 0.3s cubic-bezier(.08,.82,.17,1);
-  color: black;
-  display: flex;
-  justify-content: center;
+#caption {
+  position: relative;
+  padding: 0 24px;
+  text-align: center;
 }
 
-#feature-hover-text > img {
-  width: 180px;
-  height: 162px; 
-  transform: translateY(18px);
-}
-
-#feature-hover-text:hover {
-  opacity: 1; /* change this to 0.6 for text */
-}
-
-#feature-image > * {
-  position: absolute;
-  top: 24px;
-  left: 32px;
-}
-
-#caption , #caption-alt{
-  position: absolute;
-  left: 200px;
-}
-
-#caption-alt {
-  display: none;
-}
 
 #message-section {
-  position:relative
+  position: relative
 }
 
 .funny-text {
@@ -226,32 +200,6 @@ h2 {
     width: auto;
     max-width: none;
   }
-}
-
-@media only screen and (hover: none) and (pointer: coarse){
-/* touchscreen detection */
-  .flex-container {
-    flex-direction: column;
-  }
-  .flex-item, #flex-1, #flex-2 {
-    width: auto;
-    max-width: none;
-  }
-  p {
-    font-size: larger;
-  }
-
-  /* change text from cursor to tap */
-
-  #caption > p {
-    display: none;
-  }
-
-  #caption-alt {
-    display: block;
-  }
-  
-
 }
 
 #after {
