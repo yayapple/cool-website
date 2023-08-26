@@ -4,7 +4,7 @@ footerText();
 function footerText() {
     const messages = new Array(
         "give me your credit card information please.",
-        "this has been an ethan™ experience.",
+        "this has been an apple™ experience.",
         "i love you.",
         "let's keep in touch.",
         "please give me your mom's phone number.",
@@ -14,7 +14,6 @@ function footerText() {
         "turn around.",
         "lol cat..",
         "who wants to play valorant.",
-        "i know your address.",
         "stop posting about among us.",
         "keep it to yourself.",
         "reload the page.",
@@ -32,11 +31,9 @@ function footerText() {
         "mom, dad, i'm gay.",
         "you're just as funny as you think you are.",
         "i also tutor people.",
-        "i'm low on cocaine.",
         "you have to do it. you need to.",
         "you're out of eggs.",
         "go drink some water.",
-        "gay.",
         "you need to get that checked out.",
         "thanks.",
         "twitter? i hardly know 'er!",
