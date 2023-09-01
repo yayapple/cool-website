@@ -49,7 +49,7 @@ function footerText() {
         "tell em to bring the yacht out.",
         "have you ever played rugby?",
         "sanovumazeqfwpl;yukairestnaidvzgrkinatsvyuk;",
-        "there's a secret squirrel hidden in the cats.",
+        "there are 578 cats in total",
         "shoutout dragon adventures.",
         "bluunaire... i see you..."
     );

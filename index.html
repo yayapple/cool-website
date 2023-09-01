@@ -4,7 +4,6 @@
     <title>yay!!!</title>
     <link rel="stylesheet" type="text/css" href="page.css">
     <link rel="shortcut icon" href="media/sus.png">
-    <!--<script async src="https://api.countapi.xyz/hit/amongus-s.us/visits?callback=viewCount"></script>-->
   </head>
   <body>
     <div>
@@ -68,10 +67,11 @@
           </div>
           <div class="section-content">
             <div id="feature-image">
-              <img src="cats/1.jpg " draggable="false" (dragstart)="false;" onclick="randomCat()">
+              <img src="cats/1.jpg " draggable="false" (dragstart)="false;" onclick="catCounter(); randomCat()">
             </div>
             <div id="caption">
-              <p>click cat 4 more cat</p>
+              <p>click cat for more cat</p>
+              <p id="counter">you have click cat 0 times</p>
             </div>
           </div>
         </li>
@@ -83,8 +83,6 @@
             <p>
             </p>
             <p>i have nothing else interesting to put here right now sorry</p>
-            <!--<p>funny button (click)</p>
-            <button id="clickbutton" onclick="clicked(this)">loading...</button>-->
           </div>
         </li>
       </ul>

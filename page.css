@@ -1,3 +1,5 @@
+ /* this desperately needs to be seperated into multiple files*/
+
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Recursive:slnt,wght,CRSV,MONO@-5,400,0,0.25&display=swap'); 
 
@@ -108,7 +110,7 @@ h2 {
 
 #feature-image img {
   max-width: 200px;
-  max-height: 150px;
+  max-height: 130px;
   z-index: 1;
   padding: 24px 32px 0;
   justify-items: center;
@@ -126,6 +128,13 @@ h2 {
   text-align: center;
 }
 
+#caption p {
+  margin: 0.4em 0 0;
+}
+
+#counter {
+  font-size: 12px;
+}
 
 #message-section {
   position: relative
@@ -189,7 +198,7 @@ h2 {
 }
 
 #flex-2 {
-  width: 250px;
+  width: 260px;
   max-width: 300px;
 }
 

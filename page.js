@@ -1,16 +1,6 @@
 happyDate();
 randomCat();
 
-var xhr = new XMLHttpRequest();
-xhr.open("GET", "https://api.countapi.xyz/hit/amongus-s.us/hits");
-xhr.send();
-
-xhr.open("GET", "https://api.countapi.xyz/get/amongus-s.us/clicks");
-xhr.responseType = "json";
-xhr.onload = function() {
-  document.getElementById("clickbutton").innerHTML = this.response.value;
-}
-xhr.send();
 
 function happyDate() {
   const date = new Date();
@@ -20,15 +10,27 @@ function happyDate() {
 }
 
 function randomCat() {
-  const number = Math.floor(Math.random() * 138) + 1
+  const number = Math.floor(Math.random() * 578) + 1
   document.getElementById("feature-image").firstElementChild.src="cats/" + number + ".jpg"
+  
+  var numClicks = checkCookie(document.cookie)
+  document.getElementById("counter").innerHTML = "you have click cat " + numClicks + " time"
+} 
+function catCounter() {
+
+  var numClicks = checkCookie(document.cookie)
+  numClicks = parseInt(numClicks) + 1
+
+  document.cookie="cat=" + numClicks + "; expires=Fri, 31 Dec 9999 23:59:59 GMT"
 }
 
-function clicked(e) {
-  xhr.open("GET", "https://api.countapi.xyz/hit/amongus-s.us/clicks");
-  xhr.responseType = "json";
-  xhr.onload = function() {
-    e.innerHTML = this.response.value;
-  }
-  xhr.send();
+function checkCookie(cookie) {
+  if (!cookie.includes("cat")) resetCookie()
+  if (cookie.includes("NaN")) resetCookie()
+
+  return parseInt(document.cookie.split(";")[0].substring(4))
+}
+
+function resetCookie() {
+  document.cookie="cat=0; expires=Fri, 31 Dec 9999 23:59:59 GMT"
 }
